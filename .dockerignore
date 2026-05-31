@@ -1,0 +1,40 @@
+# ─── Build artefacts ──────────────────────────────────────────────────────────
+dist/
+*.tsbuildinfo
+
+# ─── Dependencies (re-installed inside container) ─────────────────────────────
+node_modules/
+
+# ─── Environment secrets (never bake credentials into an image) ───────────────
+.env
+.env.*
+!.env.example
+
+# ─── Source control ───────────────────────────────────────────────────────────
+.git/
+.gitignore
+
+# ─── Tests (not needed at runtime) ───────────────────────────────────────────
+tests/
+vitest.config.ts
+tsconfig.test.json
+
+# ─── Database migration tooling (not needed at runtime) ──────────────────────
+drizzle/
+drizzle.config.ts
+
+# ─── Documentation ────────────────────────────────────────────────────────────
+docs/
+README.md
+CHANGELOG.md
+*.md
+
+# ─── Editor / OS artefacts ───────────────────────────────────────────────────
+.vscode/
+.idea/
+*.DS_Store
+Thumbs.db
+
+# ─── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
