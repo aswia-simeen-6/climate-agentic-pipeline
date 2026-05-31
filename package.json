@@ -6,7 +6,6 @@
   "type": "commonjs",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "worker": "tsx src/worker/queueWorker.ts",
     "build": "tsc --project tsconfig.json",
     "start": "node dist/server.js",
     "db:generate": "drizzle-kit generate",
