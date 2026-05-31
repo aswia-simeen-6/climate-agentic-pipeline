@@ -13,6 +13,7 @@
 
 import { v4 as uuidv4 } from "uuid";
 import { computeP001Score } from "../scoring";
+import { P001_SYSTEM_PROMPT } from "../prompts/p001SystemPrompt";
 import type {
   AgentState,
   ExecutionTrace,
@@ -84,6 +85,7 @@ export async function p001Node(
     confidenceScore: primerScore.confidenceScore,
     intensityRatio: scoringResult.detail.intensityRatio,
     deviationFromBenchmarkPct: scoringResult.detail.deviationFromBenchmarkPct,
+    systemPromptUsed: P001_SYSTEM_PROMPT.slice(0, 80),
   };
 
   const trace: ExecutionTrace = {

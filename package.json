@@ -6,6 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "dev": "tsx watch src/server.ts",
+    "worker": "tsx src/worker/queueWorker.ts",
     "build": "tsc --project tsconfig.json",
     "start": "node dist/server.js",
     "db:generate": "drizzle-kit generate",
@@ -20,9 +21,9 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.24.3",
-    "@langchain/anthropic": "^0.2.15",
-    "@langchain/core": "^1.1.48",
-    "@langchain/langgraph": "^0.2.19",
+    "@langchain/anthropic": "^0.3.21",
+    "@langchain/core": "^0.3.80",
+    "@langchain/langgraph": "^0.2.74",
     "@trpc/server": "^11.0.0-rc.446",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.31.4",

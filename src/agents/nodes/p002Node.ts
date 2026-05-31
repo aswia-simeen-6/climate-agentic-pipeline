@@ -13,6 +13,7 @@
 
 import { v4 as uuidv4 } from "uuid";
 import { computeP002Score } from "../scoring";
+import { P002_SYSTEM_PROMPT } from "../prompts/p002SystemPrompt";
 import type {
   AgentState,
   ExecutionTrace,
@@ -97,6 +98,7 @@ export async function p002Node(
     deviationFromTsx60Pp: detail.deviationFromTsx60Pp,
     boardSize: p002Input.boardSize,
     femaleDirectors: p002Input.femaleDirectors,
+    systemPromptUsed: P002_SYSTEM_PROMPT.slice(0, 80),
   };
 
   const trace: ExecutionTrace = {

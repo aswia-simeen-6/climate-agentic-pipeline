@@ -219,7 +219,7 @@ export const ScoreSummarySchema = z.object({
 
 /** Output for `primer.submitData`. */
 export const SubmitDataOutputSchema = z.object({
-  requestId: z.string(),
+  jobId: z.string().describe("Unique identifier for this pipeline execution. In synchronous mode, results are returned immediately."),
   companyId: UuidSchema,
   reportingYear: ReportingYearSchema,
   processingComplete: z.boolean(),

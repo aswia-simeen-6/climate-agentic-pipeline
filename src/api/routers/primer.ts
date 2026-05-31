@@ -99,7 +99,8 @@ export const primerRouter = router({
         });
       }
 
-      // ── Execute pipeline ──────────────────────────────────────────────────
+      // ── Execute pipeline (sync) or enqueue (async) ───────────────────────
+      
       let result: Awaited<ReturnType<typeof runEsgPipeline>>;
 
       try {
@@ -127,7 +128,7 @@ export const primerRouter = router({
       }
 
       return {
-        requestId: ctx.requestId,
+        jobId: ctx.requestId,
         companyId: result.companyId,
         reportingYear: result.reportingYear,
         processingComplete: result.processingComplete,

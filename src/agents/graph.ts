@@ -215,6 +215,21 @@ function buildEsgGraph() {
     .addEdge("p002Processing", "p003Processing")
     .addEdge("p003Processing", "persistence")
 
+    // ── Optional: Parallel (fan-out) variant example (commented) ───────────
+    // If you prefer to run primer nodes in parallel, LangGraph's Send/Receive
+    // primitives can be used to fan-out and then join results. The example
+    // below is intentionally commented out; it demonstrates the topology
+    // but is not activated by default to preserve deterministic traces.
+    /*
+    .addEdge("p001Processing", "persistence")
+    .addEdge("p002Processing", "persistence")
+    .addEdge("p003Processing", "persistence")
+    // Alternatively, use a dedicated join node that waits for all three
+    // primers and then forwards to persistence. This requires explicit
+    // coordination and is more complex but improves throughput for I/O
+    // bound primers like P-003.
+    */
+
     // ── Terminal edge ──────────────────────────────────────────────────────
     .addEdge("persistence", END);
 
